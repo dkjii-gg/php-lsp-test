@@ -25,6 +25,7 @@ class A extends B {
 }
 
 C::get(); // C::get() works
+C::nn()->te(); // C:nn() works C->te() does not work  | outputs c
 C::get()->te(); // C::get() works C->te does not work | outputs c
 A::get()->te(); // neither C::get nor B->te works     | outputs b
 A::nn()->te(); // neither C:nn nor C->te works        | outputs c
