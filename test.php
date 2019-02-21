@@ -9,6 +9,9 @@ class C {
     public function te() {
         echo 'c';
     }
+    public static function nn() {
+        return new self();
+    }
 }
 
 class B extends C {
@@ -21,6 +24,7 @@ class A extends B {
 
 }
 
-C::get(); // works
-C::get()->te(); // te does not work
-A::get()->te(); // Neither get nor te works
+C::get(); // C::get() works
+C::get()->te(); // C::get() works C->te does not work | outputs c
+A::get()->te(); // neither C::get nor B->te works     | outputs b
+A::nn()->te(); // neither C:nn nor C->te works        | outputs c
